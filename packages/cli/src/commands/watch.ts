@@ -66,9 +66,9 @@ export class WatchCommand extends Command {
     description: "The port to serve the reports on (default: random port)",
   });
 
-  newOnly = Option.Boolean("--new-only", {
+  newOnly = Option.Boolean("--new-only", true, {
     description:
-      "Skip whatever test results already exist on disk at startup and only react to results written after the watch has started, instead of ingesting the existing backlog first (default: false)",
+      "Skip whatever test results already exist on disk at startup and only react to results written after the watch has started, instead of ingesting the existing backlog first (default: true). Pass --no-new-only to ingest the existing backlog too",
   });
 
   async execute() {
